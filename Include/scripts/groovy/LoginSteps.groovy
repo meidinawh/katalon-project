@@ -88,18 +88,18 @@ class LoginSteps {
 		WebUI.verifyTextPresent('Dashboard', false)
 		WebUI.closeBrowser()
 	}
-	
+
 	@When("I only input valid username (.*)")
 	def inputOnlyUsername(String username) {
 		WebUI.setText(findTestObject('Object Repository/Page_OrangeHRM/input_Username_username'), username)
 	}
-	
+
 	@Then("I see error message 'Required'")
 	def errorEmptyField() {
 		WebUI.verifyElementVisible(findTestObject('Object Repository/Page_OrangeHRM/span_Required'))
 		WebUI.closeBrowser()
 	}
-	
+
 	@When("I only input valid password (.*)")
 	def inputOnlyPass(String password) {
 		WebUI.setText(findTestObject('Object Repository/Page_OrangeHRM/input_Password_password'), password)

@@ -38,16 +38,16 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Page_My Account/div
 
 WebUI.click(findTestObject('Object Repository/Page_My Account/a_Sign Out'))
 
-WebUI.verifyElementText(findTestObject('Object Repository/Page_Create New Customer Account/div_This is a required field'), 
+WebUI.verifyElementText(findTestObject('Object Repository/Page_Create New Customer Account/div_warningFirstName'), 
     'This is a required field.')
 
-WebUI.verifyElementText(findTestObject('Object Repository/Page_Create New Customer Account/div_This is a required field_1'), 
+WebUI.verifyElementText(findTestObject('Object Repository/Page_Create New Customer Account/div_warningLastName'), 
     'This is a required field.')
 
-WebUI.verifyElementText(findTestObject('Object Repository/Page_Create New Customer Account/div_This is a required field_1_2'), 
+WebUI.verifyElementText(findTestObject('Object Repository/Page_Create New Customer Account/div_warningEmail'), 
     'This is a required field.')
 
-WebUI.verifyElementText(findTestObject('Object Repository/Page_Create New Customer Account/div_This is a required field_1_2_3'), 
+WebUI.verifyElementText(findTestObject('Object Repository/Page_Create New Customer Account/div_warningConfirmPassword'), 
     'This is a required field.')
 
 WebUI.verifyElementText(findTestObject('Object Repository/Page_Create New Customer Account/div_Please enter a valid email address (Ex _bf576d'), 

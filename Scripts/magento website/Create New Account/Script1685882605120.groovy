@@ -17,3 +17,64 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
+WebUI.openBrowser('')
+
+WebUI.navigateToUrl('https://magento.softwaretestingboard.com/customer/account/create/')
+
+if (firstName != 'none') {
+    WebUI.setText(findTestObject('Object Repository/Page_Create New Customer Account/input_First Name_firstname'), firstName)
+}
+
+if (lastName != 'none') {
+    WebUI.setText(findTestObject('Object Repository/Page_Create New Customer Account/input_Last Name_lastname'), lastName)
+}
+
+if (email != 'none') {
+    WebUI.setText(findTestObject('Object Repository/Page_Create New Customer Account/input_Email_email'), email)
+}
+
+if (password != 'none') {
+    WebUI.setText(findTestObject('Object Repository/Page_Create New Customer Account/input_Password_password'), password)
+}
+
+if (confirmPassword != 'none') {
+    WebUI.setText(findTestObject('Object Repository/Page_Create New Customer Account/input_Confirm Password_password_confirmation'), 
+        confirmPassword)
+}
+
+WebUI.click(findTestObject('Object Repository/Page_Create New Customer Account/button_Create an Account'))
+
+if (testType == 'P') {
+    WebUI.verifyElementVisible(findTestObject('Object Repository/Page_My Account/div_Thank you for registering with Main Web_e69dd7'))
+
+    WebUI.closeBrowser()
+} else {
+    if (warningFirstName != 'none') {
+        WebUI.verifyElementText(findTestObject('Object Repository/Page_Create New Customer Account/div_warningFirstName'), 
+            warningFirstName)
+		WebUI.closeBrowser()
+    }
+    
+    if (warningLastName != 'none') {
+        WebUI.verifyElementText(findTestObject('Object Repository/Page_Create New Customer Account/div_warningLastName'), 
+            warningLastName)
+		WebUI.closeBrowser()
+    }
+    
+    if (warningEmail != 'none') {
+        WebUI.verifyElementText(findTestObject('Object Repository/Page_Create New Customer Account/div_warningEmail'), warningEmail)
+		WebUI.closeBrowser()
+	}
+    
+    if (warningPassword != 'none') {
+        WebUI.verifyElementText(findTestObject('Object Repository/div_warningPassword'), warningPassword)
+		WebUI.closeBrowser()
+    }
+    
+    if (warningConfirmPassword != 'none') {
+        WebUI.verifyElementText(findTestObject('Object Repository/Page_Create New Customer Account/div_warningConfirmPassword'), 
+            warningConfirmPassword)
+		WebUI.closeBrowser()
+    }
+}
+
